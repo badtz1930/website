@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Temperature Conversion</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" href="gmu.png" />
+  </head>
+  <body>
+    <script>
+      function showPrompt() {
+        var choice = prompt(
+          "TEMPERATURE CONVERSION:\nEnter 1 to convert 'C' to 'F'\nEnter 2 to convert 'F' to 'C'"
+        );
+        if (choice == "1") {
+          var celsius = prompt("Enter the temperature in Celsius:");
+          var fahrenheit = convertCtoF(parseFloat(celsius));
+          alert(
+            celsius +
+              " degrees Celsius is " +
+              fahrenheit +
+              " degrees Fahrenheit."
+          );
+        } else if (choice == "2") {
+          var fahrenheit = prompt("Enter the temperature in Fahrenheit:");
+          var celsius = convertFtoC(parseFloat(fahrenheit));
+          alert(
+            fahrenheit +
+              " degrees Fahrenheit is " +
+              celsius +
+              " degrees Celsius."
+          );
+        } else {
+          alert("Invalid input! Please enter 1 or 2.");
+        }
+      }
+
+      function convertCtoF(celsius) {
+        return (celsius * 9) / 5 + 32;
+      }
+
+      function convertFtoC(fahrenheit) {
+        return ((fahrenheit - 32) * 5) / 9;
+      }
+
+      window.onload = showPrompt;
+    </script>
+  </body>
+</html>
